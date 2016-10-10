@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "GitBook Boilerplate",
   "main": "index.js",
+  "engines": {
+    "node": "4.5.0",
+    "npm": "2.15.9"
+  },
   "scripts": {
     "generate-gitbook": "./scripts/losh generate-gitbook",
     "generate-wiki": "./scripts/losh generate-wiki",
@@ -37,5 +41,9 @@
     "gitbook-cli": "^0.3.4",
     "gulp": "^3.9.1",
     "gulp-shell": "^0.5.2"
+  },
+    "dependencies": {
+    "ejs": "2.4.1",
+    "express": "4.13.3"
   }
 }
