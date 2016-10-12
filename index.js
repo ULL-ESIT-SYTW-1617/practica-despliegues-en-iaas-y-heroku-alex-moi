@@ -20,7 +20,7 @@ app.get('/', function(request, response) {
 
 
 app.listen(app.get('port'), function() {
-  console.log('Node app is running on port:', app.get('port'));
+  console.log('Servidor corriendo... Acceda a 10.6.128.129:', app.get('port'));
 });
 
 
