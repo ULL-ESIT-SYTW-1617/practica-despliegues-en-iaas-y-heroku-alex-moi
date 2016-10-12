@@ -15,5 +15,6 @@ En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permi
 
 * Alexander Cole Mora  | [Página Personal](http://alu0100767421.github.io/)
 * Moisés Yanes Carballo | [Página Personal](http://alu0100782851.github.io/)
+* Nitesh Gul Ramnani | [Página Personal](http://alu0100814651.github.io/blog/)
 
 ![Universidad de La Laguna](https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-alex-moi/blob/master/images/logotipo-principal.png?raw=true)
