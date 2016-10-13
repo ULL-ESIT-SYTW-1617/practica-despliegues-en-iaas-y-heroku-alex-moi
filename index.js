@@ -3,8 +3,7 @@ var app = express();
 var process = require('child_process');
 
 
-
-app.set('port', (process.env.PORT || 8080));
+app.set('port', (/*process.env.PORT ||*/ 8080));
 
 app.use(express.static(__dirname + '/gh-pages/'));
 
@@ -16,7 +15,7 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (request, response) => {
-  response.render('index.html');
+  response.send('index.html');
 });
 
 
