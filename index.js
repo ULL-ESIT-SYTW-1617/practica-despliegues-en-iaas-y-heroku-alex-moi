@@ -14,17 +14,18 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 
-/*
-app.get('/', function(request, response) {
+
+app.get('/', (request, response) => {
   response.render('index.html');
-});*/
+});
+
 
 app.post('/synchronize', (request, response) => {
-    process.exec('git pull',function (err,stdout,stderr) {
+  process.exec('git pull',function (err,stdout,stderr) {
       if (err) {
           console.log("\n"+stderr);
       } else {
-          console.log(stdout);
+          console.log("Git Pull: " + stdout);
       }
     });
 });
