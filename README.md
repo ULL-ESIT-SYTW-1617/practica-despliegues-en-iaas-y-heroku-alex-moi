@@ -10,6 +10,7 @@ En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permi
 *  [Repositorio GitHub](https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-alex-moi)
 *  [Descripción de la práctica](https://crguezl.github.io/ull-esit-1617/practicas/practicagitbook.html)
 *  [Campus Virtual](https://campusvirtual.ull.es/1617/course/view.php?id=1175)
+*  [App Heroku](https://gitbook-alex-moi-nitesh.herokuapp.com/)
 
 ## Autores
 
@@ -18,5 +19,3 @@ En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permi
 * Nitesh Gul Ramnani | [Página Personal](http://alu0100814651.github.io/blog/)
 
 ![Universidad de La Laguna](https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-alex-moi/blob/master/images/logotipo-principal.png?raw=true)
-
-Heroku --> https://alex-moi-nitesh.herokuapp.com/
