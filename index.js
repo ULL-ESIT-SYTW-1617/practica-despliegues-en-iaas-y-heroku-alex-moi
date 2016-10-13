@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
-var process = require('child_process');
+var proces = require('child_process');
 
 
-app.set('port', (/*process.env.PORT ||*/ 8080));
+app.set('port', (process.env.PORT || 8080));
 
 app.use(express.static(__dirname + '/gh-pages/'));
 
@@ -20,7 +20,7 @@ app.get('/', (request, response) => {
 
 
 app.post('/synchronize', (request, response) => {
-  process.exec('git pull',function (err,stdout,stderr) {
+  proces.exec('git pull',function (err,stdout,stderr) {
       if (err) {
           console.log("\n"+stderr);
       } else {
