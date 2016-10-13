@@ -7,10 +7,10 @@ app.set('port', (process.env.PORT || 8080));
 
 app.use(express.static(__dirname + '/gh-pages/'));
 
-// views is directory for all template files
+/*// views is directory for all template files
 app.set('views', __dirname + '/gh-pages');
 app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');*/
 
 
 
@@ -20,7 +20,8 @@ app.get('/', (request, response) => {
 
 
 app.post('/synchronize', (request, response) => {
-  proces.exec('git pull',function (err,stdout,stderr) {
+  proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
+    function (err,stdout,stderr) {
       if (err) {
           console.log("\n"+stderr);
       } else {
