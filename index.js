@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+var process = require('child_process');
+
+
 
 app.set('port', (process.env.PORT || 8080));
 
@@ -16,7 +19,15 @@ app.get('/', function(request, response) {
   response.render('index.html');
 });
 
-
+app.post('/synchronize', (request, response) => {
+    process.exec('git pull',function (err,stdout,stderr) {
+      if (err) {
+          console.log("\n"+stderr);
+      } else {
+          console.log(stdout);
+      }
+    });
+});
 
 
 app.listen(app.get('port'), function() {
