@@ -14,10 +14,10 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 
-
+/*
 app.get('/', function(request, response) {
   response.render('index.html');
-});
+});*/
 
 app.post('/synchronize', (request, response) => {
     process.exec('git pull',function (err,stdout,stderr) {
