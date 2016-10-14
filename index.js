@@ -30,8 +30,9 @@ app.get('/synchronize', (request, response) => {
 
 
 app.post('/synchronize', (request, response) => {
+    console.log(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'))
     fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();
-    
+   
     function pull() { 
       response.send("Sincronizando 1");
       proces.exec('cd ' + path.resolve(__dirname, 'gitbook-alex-moi-nitesh') );
