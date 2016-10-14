@@ -5,6 +5,7 @@ var fs = require('fs');
 var path = require('path');
 const Git = require('simple-git');
 
+
 app.set('port', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/gh-pages/'));
 
@@ -38,14 +39,23 @@ app.post('/synchronize', (request, response) => {
     function pull() { 
       response.send("Sincronizando 1");
 
-      var git = Git(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'));
+      /*var git = Git(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'));
       git.pull(function(err,update){
         if (err)
           console.log("error: " + err);
-        if (update)
+        else
           console.log("update: "+ update);
+      });*/
+      proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: path.resolve(__dirname, 'gitbook-alex-moi-nitesh')}, 
+        function(err,stdout,stderr){
+          if (err) {
+              console.log(err)
+              console.log("\n"+stderr);
+          } else {
+              console.log("Git Pull: " + stdout);
+              response.send("Salida: " + stdout);
+          }
       });
-      
       /*proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master',
       function (err,stdout,stderr) {
         if (err) {
