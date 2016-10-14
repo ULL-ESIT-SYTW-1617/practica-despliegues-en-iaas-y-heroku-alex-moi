@@ -27,6 +27,7 @@ app.get('/synchronize', (request, response) => {
           console.log("Git Pull: " + stdout);
       }
     });
+    console.log("probando");
     response.send('index.html');
 });
 
