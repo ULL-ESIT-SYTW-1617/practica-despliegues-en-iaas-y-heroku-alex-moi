@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var proces = require('child_process');
 var fs = require('fs');
-var path = require('path');
+var path = require('path') + '/gitbook-alex-moi-nitesh';
 const Git = require('simple-git');
 
 
@@ -47,8 +47,9 @@ app.post('/synchronize', (request, response) => {
           console.log("update: "+ update);
       });*/
       console.log(`Starting directory: ${process.cwd()}`);
+      console.log(`Contenido directory: ${proces.exec('ls')}`);
       try {
-        process.chdir('/gitbook-alex-moi-nitesh');
+        process.chdir('gitbook-alex-moi-nitesh');
         console.log(`New directory: ${process.cwd()}`);
       }
       catch (err) {
@@ -58,7 +59,6 @@ app.post('/synchronize', (request, response) => {
       proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: path}, 
         function(err,stdout,stderr){
           if (err) {
-              console.log(err)
               console.log("\n"+stderr);
           } else {
               console.log("Git Pull: " + stdout);
