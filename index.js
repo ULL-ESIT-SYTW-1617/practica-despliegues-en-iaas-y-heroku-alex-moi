@@ -41,9 +41,9 @@ app.post('/synchronize', (request, response) => {
       var git = Git(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'));
       git.pull(function(err,update){
         if (err)
-          console.log(err);
-        else
-          console.log(update);
+          console.log("error: " + err);
+        if (update)
+          console.log("update: "+ update);
       });
       
       /*proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master',
