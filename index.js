@@ -4,7 +4,7 @@ var proces = require('child_process');
 var fs = require('fs');
 var path = require('path');
 const Git = require('simple-git');
-
+var directorio = path.resolve(__dirname, 'gitbook-alex-moi-nitesh');
 
 app.set('port', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/gh-pages/'));
@@ -34,8 +34,9 @@ app.post('/synchronize', (request, response) => {
     if(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'))
       console.log("Existe");
       
-    fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();
-   
+    /*fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();*/
+    
+    pull();
     function pull() { 
       response.send("Sincronizando 1");
 
@@ -49,14 +50,14 @@ app.post('/synchronize', (request, response) => {
       console.log(`Starting directory: ${process.cwd()}`);
       console.log(`Contenido directory: ${proces.exec('ls')}`);
       try {
-        process.chdir('gitbook-alex-moi-nitesh');
+        process.chdir(directorio);
         console.log(`New directory: ${process.cwd()}`);
       }
       catch (err) {
         console.log(`chdir: ${err}`);
       }
-      
-      proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: path}, 
+      /*
+      proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: directorio}, 
         function(err,stdout,stderr){
           if (err) {
               console.log("\n"+stderr);
@@ -64,17 +65,8 @@ app.post('/synchronize', (request, response) => {
               console.log("Git Pull: " + stdout);
               response.send("Salida: " + stdout);
           }
-      });
-      /*proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master',
-      function (err,stdout,stderr) {
-        if (err) {
-            console.log(err)
-            console.log("\n"+stderr);
-        } else {
-            console.log("Git Pull: " + stdout);
-            response.send("Salida: " + stdout);
-        }
       });*/
+      
     }
     
     function clone() { 
