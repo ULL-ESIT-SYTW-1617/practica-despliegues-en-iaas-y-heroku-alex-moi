@@ -29,7 +29,7 @@ app.get('/synchronize', (request, response) => {
 });
 
 
-app.get('/synchronizee', (request, response) => {
+app.post('/synchronize', (request, response) => {
     fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();
     
     function pull() { 
