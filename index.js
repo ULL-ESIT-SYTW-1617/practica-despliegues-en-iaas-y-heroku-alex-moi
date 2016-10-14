@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var proces = require('child_process');
 var fs = require('fs');
-var path = require('path') + '/gitbook-alex-moi-nitesh';
+var path = require('path');
 const Git = require('simple-git');
 
 
