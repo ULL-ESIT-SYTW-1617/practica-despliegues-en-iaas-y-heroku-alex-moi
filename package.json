@@ -45,6 +45,7 @@
   "dependencies": {
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "gitbook-cli": "^2.3.0"
+    "gitbook-cli": "^2.3.0",
+    "gulp-git": "^1.11.3"
   }
 }
