@@ -34,9 +34,9 @@ app.post('/synchronize', (request, response) => {
     if(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'))
       console.log("Existe");
       
-    /*fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();*/
+    fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();
     
-    pull();
+    /*pull();*/
     function pull() { 
       response.send("Sincronizando 1");
 
@@ -47,16 +47,16 @@ app.post('/synchronize', (request, response) => {
         else
           console.log("update: "+ update);
       });*/
-      console.log(`Starting directory: ${process.cwd()}`);
-      console.log(`Contenido directory: ${proces.exec('ls')}`);
+      console.log(`Directorio actual: ${process.cwd()}`);
+      /*console.log(`Contenido directory: ${proces.exec('ls')}`);
       try {
         process.chdir(directorio);
         console.log(`New directory: ${process.cwd()}`);
       }
       catch (err) {
         console.log(`chdir: ${err}`);
-      }
-      /*
+      }*/
+      
       proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: directorio}, 
         function(err,stdout,stderr){
           if (err) {
@@ -65,14 +65,14 @@ app.post('/synchronize', (request, response) => {
               console.log("Git Pull: " + stdout);
               response.send("Salida: " + stdout);
           }
-      });*/
+      });
       
     }
     
     function clone() { 
       response.send("Sincronizando 2");
 
-      proces.exec("git clone git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: path}, 
+      proces.exec("git clone git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: directorio}, 
       function(err,stdout,stderr){
         if (err) {
             console.log("\n"+stderr);
