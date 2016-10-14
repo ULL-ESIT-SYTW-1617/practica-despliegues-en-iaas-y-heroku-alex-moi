@@ -32,6 +32,14 @@ app.get('/synchronize', (request, response) => {
 });
 
 app.post('/synchronize', (request, response) => {
+   proces.exec('cd ~/practica-despliegues-en-iaas-y-heroku-alex-moi',
+    function (err,stdout,stderr) {
+      if (err) {
+          console.log("\n"+stderr);
+      } else {
+          console.log("cd: " + stdout);
+      }
+    });
   proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
     function (err,stdout,stderr) {
       if (err) {
