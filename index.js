@@ -46,7 +46,16 @@ app.post('/synchronize', (request, response) => {
         else
           console.log("update: "+ update);
       });*/
-      proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: path.resolve(__dirname, 'gitbook-alex-moi-nitesh')}, 
+      console.log(`Starting directory: ${process.cwd()}`);
+      try {
+        process.chdir('/gitbook-alex-moi-nitesh');
+        console.log(`New directory: ${process.cwd()}`);
+      }
+      catch (err) {
+        console.log(`chdir: ${err}`);
+      }
+      
+      proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: path}, 
         function(err,stdout,stderr){
           if (err) {
               console.log(err)
