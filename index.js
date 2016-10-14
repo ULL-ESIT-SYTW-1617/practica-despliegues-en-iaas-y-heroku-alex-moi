@@ -3,7 +3,7 @@ var app = express();
 var proces = require('child_process');
 var fs = require('fs');
 var path = require('path');
-
+const Git = require('simple-git');
 
 app.set('port', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/gh-pages/'));
@@ -37,11 +37,12 @@ app.post('/synchronize', (request, response) => {
     pull();
     function pull() { 
       response.send("Sincronizando 1");
-      console.log( process.cwd() );
-      proces.exec('cd /gitbook-alex-moi-nitesh' );
-      console.log( process.cwd() );
+
+      /*proces.exec('cd /gitbook-alex-moi-nitesh' );*/
+        var git = Git(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'));
+        git.pull();
       
-      proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master',
+      /*proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master',
       function (err,stdout,stderr) {
         if (err) {
             console.log(err)
@@ -50,7 +51,7 @@ app.post('/synchronize', (request, response) => {
             console.log("Git Pull: " + stdout);
             response.send("Salida: " + stdout);
         }
-      });
+      });*/
     }
     
     /*function clone() { 
