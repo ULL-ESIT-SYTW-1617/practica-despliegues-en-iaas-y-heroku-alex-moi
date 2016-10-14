@@ -32,7 +32,7 @@ app.get('/synchronize', (request, response) => {
 });
 
 app.post('/synchronize', (request, response) => {
-  proces.exec('git pull https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
+    proces.exec('git clone git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
     function (err,stdout,stderr) {
       if (err) {
           console.log("\n"+stderr);
@@ -41,6 +41,15 @@ app.post('/synchronize', (request, response) => {
           response.send("Salida: " + stdout)
       }
     });
+  /*proces.exec('git pull https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
+    function (err,stdout,stderr) {
+      if (err) {
+          console.log("\n"+stderr);
+      } else {
+          console.log("Git Pull: " + stdout);
+          response.send("Salida: " + stdout)
+      }
+    });*/
     response.send("Sincronizando");
 });
 
