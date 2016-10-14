@@ -32,7 +32,7 @@ app.get('/synchronize', (request, response) => {
 });
 
 app.post('/synchronize', (request, response) => {
-   proces.exec('cd ~/practica-despliegues-en-iaas-y-heroku-alex-moi',
+   proces.exec('cd ~/gitbook-alex-moi-nitesh',
     function (err,stdout,stderr) {
       if (err) {
           console.log("\n"+stderr);
