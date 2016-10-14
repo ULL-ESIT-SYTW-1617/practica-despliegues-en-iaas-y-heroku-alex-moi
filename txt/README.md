@@ -12,6 +12,8 @@ En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permi
 *  [Repositorio GitHub](https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-alex-moi)
 *  [Descripción de la práctica](https://crguezl.github.io/ull-esit-1617/practicas/practicagitbook.html)
 *  [Campus Virtual](https://campusvirtual.ull.es/1617/course/view.php?id=1175)
+*  [App Heroku](https://gitbook-alex-moi-nitesh.herokuapp.com/)
+*  [Despliegue en IaaS](http://10.6.128.129:8080/)
 
 ## Autores
 
