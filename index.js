@@ -18,6 +18,17 @@ app.get('/', (request, response) => {
   response.send('index.html');
 });
 
+app.get('/synchronize', (request, response) => {
+  proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
+    function (err,stdout,stderr) {
+      if (err) {
+          console.log("\n"+stderr);
+      } else {
+          console.log("Git Pull: " + stdout);
+      }
+    });
+    response.send("Sincronizando");
+});
 
 app.post('/synchronize', (request, response) => {
   proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
@@ -35,5 +46,4 @@ app.post('/synchronize', (request, response) => {
 app.listen(app.get('port'), function() {
   console.log('Servidor corriendo... Acceda a 10.6.128.129:', app.get('port'));
 });
-
 
