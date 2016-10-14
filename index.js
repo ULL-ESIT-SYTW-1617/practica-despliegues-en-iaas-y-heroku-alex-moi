@@ -32,8 +32,8 @@ app.get('/synchronize', (request, response) => {
 app.post('/synchronize', (request, response) => {
     if(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'))
       console.log("Existe");
-    
-    fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();
+    pull()
+    /*fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();*/
    
     function pull() { 
       response.send("Sincronizando 1");
@@ -49,7 +49,7 @@ app.post('/synchronize', (request, response) => {
       });
     }
     
-    function clone() { 
+    /*function clone() { 
       response.send("Sincronizando 2");
       proces.exec('cd ' + path.resolve(__dirname));
      
@@ -62,7 +62,7 @@ app.post('/synchronize', (request, response) => {
             response.send("Salida: " + stdout);
         }
       });
-    }
+    }*/
 
    
 });
