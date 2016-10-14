@@ -48,6 +48,7 @@
     "express": "4.13.3",
     "gitbook-cli": "^2.3.0",
     "gulp-git": "^1.11.3",
+    "gulp-ssh": "^0.6.0",
     "simple-git": "^1.54.0"
   }
 }
