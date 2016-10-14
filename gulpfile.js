@@ -60,5 +60,5 @@ var gulpSSH = new GulpSSH({
 
 gulp.task('deploy-iaas', function () {
   return gulpSSH
-    .shell(['cd /home/usuairo/book', 'git pull']);
+    .shell(['cd /home/usuario/book', 'git pull']);
 })
