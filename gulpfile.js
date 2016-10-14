@@ -43,7 +43,7 @@ var config = {
   host: '10.6.128.129',
   port: 22,
   username: 'usuario',
-  privateKey: fs.readFileSync('~/.ssh/id_rsa')
+  privateKey: fs.readFileSync('/home/alexander/.ssh/id_rsa')
 }
  
 var gulpSSH = new GulpSSH({
