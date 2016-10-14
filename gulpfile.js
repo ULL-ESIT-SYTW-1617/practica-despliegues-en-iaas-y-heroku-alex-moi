@@ -34,3 +34,31 @@ gulp.task('wikibuild', function() {
 gulp.task('wikideploy', function() {
    return gulp.src('').pipe(shell(['./scripts/deploy-wiki'])); 
 });
+
+
+
+
+//deploy de iaas
+
+
+var fs = require('fs');
+var gulp = require('gulp')
+var GulpSSH = require('gulp-ssh')
+ 
+var config = {
+  host: '10.6.128.129',
+  port: 22,
+  username: 'usuario',
+  privateKey: fs.readFileSync('${process.env.USERPROFILE}/.ssh/id_rsa')
+}
+ 
+var gulpSSH = new GulpSSH({
+  ignoreErrors: false,
+  sshConfig: config
+})
+
+
+gulp.task('deploy-iaas', function () {
+  return gulpSSH
+    .shell(['cd /home/usuairo/book', 'git pull']);
+})
