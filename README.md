@@ -4,6 +4,8 @@
 
 ## Introducción
 
+
+
 En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla. Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones sobre cada herramienta.
 
 ## Enlaces importantes
@@ -14,6 +16,56 @@ En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permi
 *  [Campus Virtual](https://campusvirtual.ull.es/1617/course/view.php?id=1175)
 *  [App Heroku](https://gitbook-alex-moi-nitesh.herokuapp.com/)
 *  [Despliegue en el IaaS](http://10.6.128.129:8080)
+
+
+
+
+#Instalación servidor Iaas
+Para disponer del book en el servidor del **Iaas**, debemos de seguir los siguientes pasos:
+
+ *  Debemos crear una carpeta donde queremos tener el book
+ *  Debemos crear dos ficheros:
+ * Fichero **package.json** con el siguiente contenido
+```
+{
+  "name": "ServidorIaas",
+  "version": "1.0.0",
+  "description": "Servidor para publicar books",
+  "main": "iaas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node iaas.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.14.0"
+  }
+}
+```
+* Fichero **iaas.js** que será nuestro servidor express
+
+```
+var express = require("express");
+var app = express();
+
+app.set('port', (process.env.PORT || 8080));
+app.use(express.static(__dirname + '/gh-pages/'));
+
+app.listen(app.get('port'), function() {
+  console.log('Servidor en funcionamiento en el puerto 8080');
+});
+
+```
+* Ejecutamos ```npm init``` para instalar las dependencias
+* Luego creamos una carpeta con el nombre **gh-pages**. 
+* En la carpeta **gh-pages** debemos ejecutar lo siguiente:
+* `git init` 
+* ` git remote add -f origin -t gh-pages git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git`
+* Con eso tendremos en afiliada la rama gh-pages del repositorio, con solo tendremos los archivos necesarios de nuestro book.
+
+Unas vez hecho estos pasos, podremos hacer un `git pull` y luego ejecutar nuestro servidor `node iaas.js` y acceder a la dirección **direccion_ip_máquina:8080**
+
 
 ## Autores
 
