@@ -29,7 +29,7 @@ app.get('/synchronize', (request, response) => {
 });
 
 
-app.get('/synchronizee', (request, response) => {
+app.post('/synchronize', (request, response) => {
     if(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'))
       console.log("Existe");
 
