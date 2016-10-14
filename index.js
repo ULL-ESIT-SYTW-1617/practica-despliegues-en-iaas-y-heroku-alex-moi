@@ -38,7 +38,7 @@ app.post('/synchronize', (request, response) => {
     function pull() { 
       response.send("Sincronizando 1");
       console.log( process.cwd() );
-      proces.exec('cd ' + path.resolve(__dirname, 'gitbook-alex-moi-nitesh') );
+      proces.exec('cd /gitbook-alex-moi-nitesh' );
       console.log( process.cwd() );
       
       proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master',
