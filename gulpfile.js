@@ -43,7 +43,7 @@ var config = {
   host: '10.6.128.129',
   port: 22,
   username: 'usuario',
-  privateKey: fs.readFileSync('${process.env.USERPROFILE}/.ssh/id_rsa')
+  privateKey: fs.readFileSync('~/.ssh/id_rsa')
 }
  
 var gulpSSH = new GulpSSH({
@@ -54,5 +54,5 @@ var gulpSSH = new GulpSSH({
 
 gulp.task('deploy-iaas', function () {
   return gulpSSH
-    .shell(['cd /home/usuario/book', 'git pull']);
+    .shell(['cd /home/usuario/src/sytw/iaas', 'git pull']);
 })
