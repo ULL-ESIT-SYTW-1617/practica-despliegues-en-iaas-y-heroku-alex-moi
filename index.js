@@ -42,6 +42,7 @@ app.post('/synchronize', (request, response) => {
       proces.exec('git pull',
       function (err,stdout,stderr) {
         if (err) {
+            console.log(err)
             console.log("\n"+stderr);
         } else {
             console.log("Git Pull: " + stdout);
