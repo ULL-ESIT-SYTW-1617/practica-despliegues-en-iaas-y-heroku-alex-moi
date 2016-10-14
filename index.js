@@ -20,7 +20,7 @@ app.get('/', (request, response) => {
 
 
 app.post('/synchronize', (request, response) => {
-  proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master',
+  proces.exec('git pull',
     function (err,stdout,stderr) {
       if (err) {
           console.log("\n"+stderr);
