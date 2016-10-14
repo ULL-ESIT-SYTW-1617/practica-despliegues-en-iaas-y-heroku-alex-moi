@@ -30,7 +30,9 @@ app.get('/synchronize', (request, response) => {
 
 
 app.post('/synchronize', (request, response) => {
-    console.log(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'));
+    if(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'))
+      console.log("Existe");
+    
     fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();
    
     function pull() { 
@@ -49,7 +51,7 @@ app.post('/synchronize', (request, response) => {
     
     function clone() { 
       response.send("Sincronizando 2");
-      proces.exec('cd ' + path.resolve(__dirname, 'gitbook-alex-moi-nitesh'));
+      proces.exec('cd ' + path.resolve(__dirname));
      
       proces.exec('git clone git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
       function (err,stdout,stderr) {
