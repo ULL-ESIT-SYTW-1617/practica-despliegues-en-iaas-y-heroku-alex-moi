@@ -48,6 +48,7 @@ app.post('/synchronize', (request, response) => {
           console.log("update: "+ update);
       });*/
       console.log(`Directorio actual: ${process.cwd()}`);
+      console.log(`Directorio ruta: ` + directorio);
       /*console.log(`Contenido directory: ${proces.exec('ls')}`);
       try {
         process.chdir(directorio);
