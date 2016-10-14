@@ -28,6 +28,7 @@ app.post('/synchronize', (request, response) => {
           console.log("Git Pull: " + stdout);
       }
     });
+    response.send("Sincronizando");
 });
 
 
