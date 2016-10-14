@@ -21,12 +21,6 @@ gulp.task('deploy-heroku', function () {
 });
 
 
-gulp.task('deploy-iaas', function () {
-  return gulp.src('').pipe(shell([""]));
-});
-
-
-
 gulp.task('wikibuild', function() {
    return gulp.src('').pipe(shell(['./scripts/generate-wiki'])); 
 });
