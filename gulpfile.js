@@ -34,7 +34,7 @@ gulp.task('wikideploy', function() {
 
 //deploy de iaas
 
-/*
+
 var fs = require('fs');
 var gulp = require('gulp')
 var GulpSSH = require('gulp-ssh')
@@ -43,7 +43,7 @@ var config = {
   host: '10.6.128.129',
   port: 22,
   username: 'usuario',
-  privateKey: fs.readFileSync('/home/alexander/.ssh/id_rsa')
+  privateKey: fs.readFileSync(`${process.env.HOME}/.ssh/id_rsa`)
 }
  
 var gulpSSH = new GulpSSH({
@@ -55,4 +55,4 @@ var gulpSSH = new GulpSSH({
 gulp.task('deploy-iaas', function () {
   return gulpSSH
     .shell(['cd /home/usuario/src/sytw/iaas', 'git pull']);
-})*/
+})
