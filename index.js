@@ -30,31 +30,37 @@ app.get('/synchronize', (request, response) => {
 
 
 app.post('/synchronize', (request, response) => {
-    fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone()
+    fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();
     
-    function pull() { proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
+    function pull() { 
+       response.send("Sincronizando 1");
+      proces.exec('cd app/gitbook-alex-moi-nitesh');
+      proces.exec('git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
       function (err,stdout,stderr) {
         if (err) {
             console.log("\n"+stderr);
         } else {
             console.log("Git Pull: " + stdout);
-            response.send("Salida: " + stdout)
+            response.send("Salida: " + stdout);
         }
       });
     }
     
-    function clone() { proces.exec('git clone git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
+    function clone() { 
+      response.send("Sincronizando 2");
+      proces.exec('cd app/gitbook-alex-moi-nitesh');
+      proces.exec('git clone git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git',
       function (err,stdout,stderr) {
         if (err) {
             console.log("\n"+stderr);
         } else {
             console.log("Git Pull: " + stdout);
-            response.send("Salida: " + stdout)
+            response.send("Salida: " + stdout);
         }
       });
     }
 
-    response.send("Sincronizando");
+   
 });
 
 
