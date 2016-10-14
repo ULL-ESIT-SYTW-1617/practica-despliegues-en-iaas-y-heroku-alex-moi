@@ -57,14 +57,25 @@ app.listen(app.get('port'), function() {
 });
 
 ```
-* Ejecutamos ```npm init``` para instalar las dependencias
+* Ejecutamos ```npm install``` para instalar las dependencias
 * Luego creamos una carpeta con el nombre **gh-pages**. 
 * En la carpeta **gh-pages** debemos ejecutar lo siguiente:
 * `git init` 
 * ` git remote add -f origin -t gh-pages git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git`
-* Con eso tendremos en afiliada la rama gh-pages del repositorio, con solo tendremos los archivos necesarios de nuestro book.
+* Con eso tendremos en afiliada la rama gh-pages del repositorio, con que solo tendremos los archivos necesarios de nuestro book.
 
 Unas vez hecho estos pasos, podremos hacer un `git pull` y luego ejecutar nuestro servidor `node iaas.js` y acceder a la dirección **direccion_ip_máquina:8080**
+
+### SSH  keys
+Podremos conectarnos a la máquina del iaas, siempre y cuando tengamos configurados la [vpn de la ULL](http://www.ull.es/stic/tag/vpn/), y poder configurar un alias para conectarnos más rápidamente por **ssh**.
+Para ello crearemos en `~/.ssh` un fichero `config` con el siguiente contenido:
+```
+Host sytw
+	HostName dir_ip_máquina
+	User usuario
+```
+
+Así podremos realizar `shh sytw "cd /ruta_de_nuestro_book/gh_pages; git pull"` y tendremos actualizados nuestro book.
 
 
 ## Autores
