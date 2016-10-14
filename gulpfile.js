@@ -1,7 +1,7 @@
 var gulp  = require('gulp');
 var shell = require('gulp-shell');
 
-
+/*
 gulp.task('build', function() {
   return gulp.src('').pipe(shell(['./scripts/generate-gitbook']));
 });
@@ -9,7 +9,21 @@ gulp.task('build', function() {
 gulp.task('deploy', function () {
   return gulp.src('').pipe(shell(["./scripts/deploy-gitbook"]));
 });
+*/
 
+gulp.task('buildeploy', function () {
+  return gulp.src('').pipe(shell(["./scripts/generate-gitbook; ./scripts/deploy-gitbook"]));
+});
+
+
+gulp.task('deploy-heroku', function () {
+  return gulp.src('').pipe(shell(["git push heroku master"]));
+});
+
+
+gulp.task('deploy-iaas', function () {
+  return gulp.src('').pipe(shell([""]));
+});
 
 
 /*gulp.task('prueba',function() {
