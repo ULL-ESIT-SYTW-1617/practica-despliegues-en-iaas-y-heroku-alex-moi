@@ -34,7 +34,7 @@ gulp.task('wikideploy', function() {
 
 //deploy de iaas
 
-
+/*
 var fs = require('fs');
 var gulp = require('gulp')
 var GulpSSH = require('gulp-ssh')
@@ -55,4 +55,4 @@ var gulpSSH = new GulpSSH({
 gulp.task('deploy-iaas', function () {
   return gulpSSH
     .shell(['cd /home/usuario/src/sytw/iaas', 'git pull']);
-})
+})*/
