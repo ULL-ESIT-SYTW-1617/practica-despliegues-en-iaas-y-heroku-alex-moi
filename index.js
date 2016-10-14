@@ -28,7 +28,7 @@ app.get('/synchronize', (request, response) => {
       }
     });*/
     console.log("probando");
-    response.send('index.html');
+    response.send('gh-pages/index.html');
 });
 
 app.post('/synchronize', (request, response) => {
