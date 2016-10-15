@@ -10,7 +10,6 @@ app.set('port', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/gh-pages/'));
 
 
-
 app.get('/', (request, response) => {
   response.send('index.html');
 });
@@ -50,7 +49,15 @@ app.post('/sync', (request, response) => {
 
       console.log(`Directorio actual: ${process.cwd()}`);
       console.log(`Directorio ruta: ` + directorio);
-      proces.exec('git clone https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git'); 
+      proces.exec('git clone https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git', {cwd: directorio}, 
+        function(err,stdout,stderr){
+          if (err) {
+              console.log("\n"+stderr);
+          } else {
+              console.log("Git Clone: " + stdout);
+              response.send("Salida: " + stdout);
+          }
+      });
       proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: directorio}, 
         function(err,stdout,stderr){
           if (err) {
