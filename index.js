@@ -4,7 +4,7 @@ var proces = require('child_process');
 var fs = require('fs');
 var path = require('path');
 const Git = require('simple-git');
-var directorio = path.resolve(__dirname, 'practica-despliegues-en-iaas-y-heroku-alex-moi');
+var directorio = path.resolve(__dirname, 'gitbook-alex-moi-nitesh');
 
 app.set('port', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/gh-pages/'));
@@ -30,8 +30,14 @@ app.get('/synchronize', (request, response) => {
 
 
 app.post('/sync', (request, response) => {
-    if(path.resolve(__dirname, 'gitbook-alex-moi-nitesh'))
+    
+    fs.statSync(directorio, function(err){
+      if(err)
+        console.log(err);
+      
       console.log("Existe");
+    });
+
       
     /*fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();*/
     
