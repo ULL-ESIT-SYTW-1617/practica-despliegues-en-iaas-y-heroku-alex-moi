@@ -31,16 +31,13 @@ app.get('/synchronize', (request, response) => {
 
 app.post('/sync', (request, response) => {
     
-    fs.statSync(directorio, function(err){
-      if(err)
-        fs.mkdir(directorio);
-      
-      console.log("Existe");
-    });
+ 
+       
+
 
       
     /*fs.existsSync(path.resolve(__dirname, 'gitbook-alex-moi-nitesh')) ? pull() : clone();*/
-    
+    fs.mkdir(directorio);
     pull();
     function pull() { 
       response.send("Sincronizando 1");
