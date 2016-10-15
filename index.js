@@ -47,14 +47,19 @@ app.post('/sync', (request, response) => {
         else
           console.log("update: "+ update);
       });*/
-      function puts(error, stdout, stderr) {
-           console.log("Salida:"+stdout);
-           if(error) console.log("Error:"+error);
-         }
+
       console.log(`Directorio actual: ${process.cwd()}`);
       console.log(`Directorio ruta: ` + directorio);
       proces.exec('git clone https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git'); 
-      proces.exec("git pull https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master", puts);
+      proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: directorio}, 
+        function(err,stdout,stderr){
+          if (err) {
+              console.log("\n"+stderr);
+          } else {
+              console.log("Git Pull: " + stdout);
+              response.send("Salida: " + stdout);
+          }
+      });
       /*console.log(`Contenido directory: ${proces.exec('ls')}`);
       try {
         process.chdir(directorio);
@@ -64,15 +69,7 @@ app.post('/sync', (request, response) => {
         console.log(`chdir: ${err}`);
       }*/
       
-      /*proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git", {cwd: directorio}, 
-        function(err,stdout,stderr){
-          if (err) {
-              console.log("\n"+stderr);
-          } else {
-              console.log("Git Pull: " + stdout);
-              response.send("Salida: " + stdout);
-          }
-      });*/
+      
       
     }
     
