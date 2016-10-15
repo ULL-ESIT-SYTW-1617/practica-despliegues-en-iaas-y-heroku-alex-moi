@@ -33,7 +33,7 @@ app.post('/sync', (request, response) => {
     
     fs.statSync(directorio, function(err){
       if(err)
-        console.log(err);
+        fs.mkdir(directorio);
       
       console.log("Existe");
     });
