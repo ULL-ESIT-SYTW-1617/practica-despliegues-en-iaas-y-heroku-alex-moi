@@ -4,7 +4,7 @@ var proces = require('child_process');
 var fs = require('fs');
 var path = require('path');
 const Git = require('simple-git');
-var directorio = path.resolve(__dirname, 'gitbook-alex-moi-nitesh');
+var directorio = path.resolve(__dirname, 'practica-despliegues-en-iaas-y-heroku-alex-moi');
 
 app.set('port', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/gh-pages/'));
