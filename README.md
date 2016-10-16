@@ -1,10 +1,6 @@
-# Sistemas y Tecnologías Web. Tareas Iniciales.
-
-### [Refrescar book Iaas](https://10.6.128.129:8080/synchronize)
+# Sistemas y Tecnologías Web. Despliegue en IaaS y Heroku.
 
 ## Introducción
-
-
 
 En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla. Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones sobre cada herramienta.
 
@@ -17,15 +13,14 @@ En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permi
 *  [App Heroku](https://gitbook-alex-moi-nitesh.herokuapp.com/)
 *  [Despliegue en el IaaS](http://10.6.128.129:8080)
 
-
-
-
 #Instalación servidor Iaas
-Para disponer del book en el servidor del **Iaas**, debemos de seguir los siguientes pasos:
 
- *  Debemos crear una carpeta donde queremos tener el book
- *  Debemos crear dos ficheros:
- * Fichero **package.json** con el siguiente contenido
+Para disponer del book en el servidor del **IaaS**, debemos de seguir los siguientes pasos:
+
+*  Debemos crear una carpeta donde queremos tener el book
+*  Debemos crear dos ficheros:
+* Fichero **package.json** con el siguiente contenido
+
 ```
 {
   "name": "ServidorIaas",
@@ -43,6 +38,7 @@ Para disponer del book en el servidor del **Iaas**, debemos de seguir los siguie
   }
 }
 ```
+
 * Fichero **iaas.js** que será nuestro servidor express
 
 ```
@@ -57,11 +53,12 @@ app.listen(app.get('port'), function() {
 });
 
 ```
+
 * Ejecutamos ```npm install``` para instalar las dependencias
 * Luego creamos una carpeta con el nombre **gh-pages**. 
 * En la carpeta **gh-pages** debemos ejecutar lo siguiente:
-* `git init` 
-* ` git remote add -f origin -t gh-pages git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git`
+    `git init` 
+    ` git remote add -f origin -t gh-pages git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git`
 * Con eso tendremos en afiliada la rama gh-pages del repositorio, con que solo tendremos los archivos necesarios de nuestro book.
 
 Unas vez hecho estos pasos, podremos hacer un `git pull` y luego ejecutar nuestro servidor `node iaas.js` y acceder a la dirección **direccion_ip_máquina:8080**
@@ -75,7 +72,39 @@ Host sytw
 	User usuario
 ```
 
-Así podremos realizar `shh sytw "cd /ruta_de_nuestro_book/gh_pages; git pull"` y tendremos actualizados nuestro book.
+Así podremos realizar
+`shh sytw "cd /<ruta_de_nuestro_book>/gh_pages"`
+`"git pull"`
+y tendremos actualizados nuestro book.
+
+#Instalación App de Heroku
+* Para desplegar una aplicación node.js en heroku es necesario crearla una cuenta o iniciar sesión.
+* Descarga la herramienta Heroku Toolbelt para poder utilizar la línea de comandos (CLI) de heroku.
+* Luego de la instalación desde la terminal ejecutar:
+
+`$ heroku login`
+
+* Te solicitará las credenciales de tu cuenta.
+* Es necesario que agregemos en el proyecto la referencia del repositorio de heroku.
+
+`$ heroku git:remote -a heroku-project-name`
+
+* Donde heroku-project-name es el nombre del proyecto en heroku.
+* Con estos simples cambios en tu proyecto ya puedes hacer el despliegue.
+* Batará con agregar los cambios y hacer commit al repositorio.
+ 
+```
+$ git add .
+$ git commit -m "Nuevos cambios"`
+$ git push heroku master
+```
+
+##Notas:
+* Es necesario que el push sea de la rama master, si el código que deseamos desplegar esta en otra rama,
+por ejemplo develop es necesario ejecutar el comando: git push heroku develop:master.
+
+* Si no has creado el proyecto en heroku desde la web entonces ejecuta el comando: heroku create
+--http-git y ya no será necesario el comando heroku git:remote -a heroku-project-name.
 
 
 ## Autores
