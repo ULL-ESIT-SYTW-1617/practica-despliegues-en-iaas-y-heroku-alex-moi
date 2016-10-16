@@ -2,7 +2,9 @@
 
 ## Introducción
 
-En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla. Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones sobre cada herramienta.
+En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla.
+Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones
+sobre cada herramienta.
 
 ## Enlaces importantes
 *  [Despligue gh-pages Tareas Iniciales SYTW](https://ull-esit-sytw-1617.github.io/practica-despliegues-en-iaas-y-heroku-alex-moi/)

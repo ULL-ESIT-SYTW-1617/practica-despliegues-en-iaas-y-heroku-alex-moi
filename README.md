@@ -77,7 +77,7 @@ Así podremos realizar
 `"git pull"`
 y tendremos actualizados nuestro book.
 
-#Instalación App de Heroku
+#Creación de la App de Heroku
 * Para desplegar una aplicación node.js en heroku es necesario crearla una cuenta o iniciar sesión.
 * Descarga la herramienta Heroku Toolbelt para poder utilizar la línea de comandos (CLI) de heroku.
 * Luego de la instalación desde la terminal ejecutar:
