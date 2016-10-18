@@ -1,6 +1,6 @@
 # Sistemas y Tecnologías Web. Despligue en IaaS y Heroku.
 
-## Introducción 2
+## Introducción final?
 
 En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla.
 Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones
