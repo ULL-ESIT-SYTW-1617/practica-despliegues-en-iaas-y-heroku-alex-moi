@@ -32,8 +32,8 @@ app.post('/sync', (request, response) => {
     
 
   console.log(`Directorio actual: ${process.cwd()}`);
-  console.log(`Directorio ruta: ` + directorio);
-  proces.exec('git clone https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git .', 
+
+  proces.exec('git clone https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git', 
     function(err,stdout,stderr){
       if (err) {
           console.log("\n"+stderr);
@@ -41,7 +41,7 @@ app.post('/sync', (request, response) => {
           console.log("Git Clone: " + stdout);
       }
   });
-  proces.exec("git pull git@github.com:ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master", 
+  proces.exec("git pull https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master", 
     function(err,stdout,stderr){
       if (err) {
           console.log("\n"+stderr);
