@@ -44,6 +44,7 @@ app.post('/sync', (request, response) => {
   proces.exec("git pull https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git master",{cwd: '/app/practica-despliegues-en-iaas-y-heroku-alex-moi'},
     function(err,stdout,stderr){
       if (err) {
+        console.log("error"+ err)
           console.log("\n"+stderr);
       } else {
           console.log("Git Pull: " + stdout);
