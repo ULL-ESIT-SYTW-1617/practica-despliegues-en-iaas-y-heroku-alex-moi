@@ -2,7 +2,7 @@
 
 ## Introducción
 
-En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla.
+En esta práctica, comenzaremos a utilizar **GitBook** un sistema que nos permite crear nuestros propios books de una manera sencilla.
 Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones
 sobre cada herramienta.
 
