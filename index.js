@@ -34,7 +34,7 @@ app.post('/sync', (request, response) => {
   fs.existsSync(path.resolve(__dirname, 'practica-despliegues-en-iaas-y-heroku-alex-moi')) ? pull(): clone();
 
   function clone(){
-    proces.exec('git clone https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git', 
+    proces.exec('git clone https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-alex-moi.git .', 
       function(err,stdout,stderr){
         if (err) {
             console.log("error"+ err);
