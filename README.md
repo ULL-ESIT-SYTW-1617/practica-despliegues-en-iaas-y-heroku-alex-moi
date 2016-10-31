@@ -2,7 +2,7 @@
 
 ## Introducción
 
-En esta práctica, comenzaremos a utilizar **GitBook**, un sistema que nos permite crear nuestros propios books de una manera sencilla. Además utilizaremos otras herramientas como **NodeJS**, **Gulp** o **npm**, realizando unos pequeños tutoriales y breves explicaciones sobre cada herramienta.
+El objetivo de esta práctica es proporcionar un mecanismo de despliegue de un libro gitbook a otros sites. Estos *sites* son heroku y la máquina del IaaS. Para ello se debe hacer uso de los desarrollos realizados en las prácticas anteriores para llevar a cabo el desarrollo de un gitbook, además de añadir nuevas funcionalidades para realizar los despliegues.
 
 ## Enlaces importantes
 *  [Despligue gh-pages Tareas Iniciales SYTW](https://ull-esit-sytw-1617.github.io/practica-despliegues-en-iaas-y-heroku-alex-moi/)
